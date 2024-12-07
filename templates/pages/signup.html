@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container my-2">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit" style="float: left;">تسجيل</button>
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+
+
+<div id="slide" class="carousel slide container w-75 mt-5 mb-5" data-ride="carousel">
+        <ol class="carousel-indicators" style="bottom: -30px" >
+            <li data-target="#slide" data-slide-to="0" class="active"></li>
+            <li data-target="#slide" data-slide-to="1"></li>
+            <li data-target="#slide" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            {% for announce in announces%}
+            <div class="carousel-item  {% if forloop.first %}active{% endif %}" style="text-align: center;">
+                <h2 style="font-family: Marhey;">  {{announce.title}}</h2>
+                <p style="font-family: Marhey;" class="w-100">
+                        {{announce.content}}
+                    </p>
+                    
+                </div>
+            {% endfor %}
+
+            </div>
+
+        <a href="#slide" class="carousel-control-next" data-slide="next" style="right: -30px;">
+
+            <span class="carousel-control-next-icon" aria-hidden="true" ></span>
+        </a>
+        <a href="#slide" class="carousel-control-prev" data-slide="prev" style="left: -30px;">
+    
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </a>
+    </div>
+<br>
+<br>
+    <hr>
+ 
+{% endblock %}

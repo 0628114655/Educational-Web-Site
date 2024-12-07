@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-4">
+
+    <div class="card w-100" >
+                    <img src="{{user.imageURL}}" style="width: 250px; height:auto" class="card-img-top img-fluid m-2 mx-auto" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{user.firstname}} {{user.lastname}}</h5>
+                      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item"> <i class="fas fa-user"></i>  رمز مسار: {{user.user.username}}</li>
+                      <li class="list-group-item"> <i class="fas fa-users"></i>  القسم: {{user.section}}</li>
+                      <li class="list-group-item"> <i class="fas fa-envelope"></i>  البريد الإلكتروني: {% if user.user.email %}{{user.user.email}} {% else %} بدون {% endif %} </li>
+                    </ul>
+                    <div class="card-body">
+                      <a href="{% url 'password_change' %}" class="card-link" style="float: left;"> <i class="fas fa-key"></i> تعديل كلمة المرور</a>
+                    </div>
+    </div>
+            
+
+</div>
+{% endblock %}

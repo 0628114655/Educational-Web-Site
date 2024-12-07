@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container ">
+        <div class="row p-3 m-4">
+            <div class="col col-8">
+                <p class="text-center">{{course.title}}</p>
+                <p class="my-2">{{course.introduction}}</p>
+                {{course.subject}}
+                <p class="my-2">{{course.conclusion}}</p>
+            </div>
+            <div class="col col-4 ">
+                {% for image in images %}
+                    <div class="my-3">
+                        <div class="">{{image.title}}</div>
+                        <div class="" ><img src="{{image.imgURL}}" class="my-1" style="width: 300px; height:auto" alt=""></div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

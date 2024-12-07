@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+ 
+{% block content %}
+<div class="container">
+    
+    <p>
+        <a href="{% url 'exam_research' %}">تصحيح الامتحانات</a>
+    </p>
+
+    <p>
+        <a href="#">نماذج الامتحانات</a>
+    </p>
+    
+    <p>
+        <a href="{% url 'exam_marks' %}">نقط الامتحانات</a>
+    </p>
+
+{% endblock content %}
